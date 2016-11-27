@@ -1,0 +1,12 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+</div>
+<div class="container">
+    <button *ngIf="tasks && tasks.length" class="btn btn-primary" (click)="showForm()">{{isHidden ? "Add Task": "Close Form" }}</button>
+    <task-add *ngIf="!isHidden || !tasks.length" [tasks]="tasks" ></task-add>
+
+    <!-- Filter the Products   -->
+    <task-table></task-table>
+</div>
