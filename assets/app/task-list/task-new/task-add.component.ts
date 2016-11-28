@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {Task} from "../models/task.model";
+import { Component, Input } from '@angular/core';
 import {NgForm} from "@angular/forms";
+
 import {TaskListService} from "../task.service";
+import {Task} from "../models/task.model";
 
 @Component({
 
@@ -9,20 +10,32 @@ import {TaskListService} from "../task.service";
     templateUrl: './task-add.component.html',
     styles: [`.ng-invalid.ng-touched{border-color: red}`]
 })
-export class TaskAddComponent implements OnInit {
+export class TaskAddComponent{
 
     @Input() tasks: Task[];
     constructor(private taskListService: TaskListService) { }
 
-    ngOnInit() { }
+
 
     onSubmit(form: NgForm){
-        console.log(form);
+            console.log(form);
+            const task = new Task(form.value.title, form.value.description, form.value.deadline, (this.tasks.length? this.tasks.length : 0).toString(), []);
+            this.taskListService.addTask(task)
+                .subscribe(
+                    data => console.log(data),
+                    error => console.log(error)
+                );
+            form.resetForm();
+        }
 
-        this.taskListService.addTask(
-            new Task(form.value.title, form.value.description, form.value.deadline, (this.tasks.length? this.tasks.length : 0).toString(), [])
-        );
-        form.resetForm();
-    }
+    // OLD SUBMIT
+    // onSubmit(form: NgForm){
+    //     console.log(form);
+    //
+    //     this.taskListService.addTask(
+    //         new Task(form.value.title, form.value.description, form.value.deadline, (this.tasks.length? this.tasks.length : 0).toString(), [])
+    //     );
+    //     form.resetForm();
+    // }
 
 }

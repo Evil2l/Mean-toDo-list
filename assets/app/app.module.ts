@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from "./app.component";
+import {HttpModule} from "@angular/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
-import {Http, HttpModule} from "@angular/http";
+import { AppComponent } from "./app.component";
 
 import {TaskListComponent} from "./task-list/task-list.component";
 import {TaskDetailComponent} from "./task-detail/task-detail.component";
@@ -34,7 +33,6 @@ import {TaskListService} from "../app/task-list/task.service";
     ],
     providers: [
         TaskListService,
-
     ],
     bootstrap: [AppComponent]
 })

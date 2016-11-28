@@ -28,16 +28,12 @@ export class TaskDetailComponent implements OnInit, OnDestroy {
 
         this.productID = this.route.snapshot.params['id'];
 
-        console.log(this.productID);
 
-        console.log(this.route.params);
 
         this.paramsSubscription = this.route.params.subscribe( params =>{
-            console.log(params);
-            console.log(params['id']);
 
             this.task = this.taskListService.getTask(params['id']);
-            console.log(this.task)
+
         })
     }
 
