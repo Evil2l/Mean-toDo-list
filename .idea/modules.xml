@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../Task_list/.idea/02 NodeJS.iml" filepath="$PROJECT_DIR$/../Task_list/.idea/02 NodeJS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../TaskList/.idea/02 NodeJS.iml" filepath="$PROJECT_DIR$/../TaskList/.idea/02 NodeJS.iml" />
     </modules>
   </component>
 </project>

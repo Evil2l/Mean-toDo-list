@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TaskListService} from "./task.service";
-import {Task} from "./task";
-import {Comment} from "./comment";
+import {Task} from "./models/task.model";
+import {Comment} from "./models/comment.model";
 
 @Component({
     selector: 'task-list',

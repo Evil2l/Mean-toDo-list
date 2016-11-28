@@ -16,7 +16,6 @@ mongoose.connect("mongodb://user:user@ds163417.mlab.com:63417/mean-todo", functi
 var appRoutes = require('./routes/app');
 var tasksRoutes = require('./routes/tasks');
 var commentsRoutes = require('./routes/comments');
-var apiRoutes = require('./routes/api');
 
 var app = express();
 
@@ -41,7 +40,6 @@ app.use(function (req, res, next) {
 
 app.use('/comment', commentsRoutes);
 app.use('/task', tasksRoutes);
-app.use('/api', apiRoutes);
 
 app.use('/', appRoutes);
 

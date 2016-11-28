@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Task} from "./task";
-import {Comment} from "./comment";
-import {Http, Response, Headers} from "@angular/http";
-import 'rxjs/Rx';
-import {Observable} from "rxjs";
+import {Task} from "./models/task.model";
+import {Comment} from "./models/comment.model";
+import {Http} from "@angular/http";
+
 
 @Injectable()
 export class TaskListService {
@@ -20,7 +19,7 @@ export class TaskListService {
         )
     ];
     private tasksDummy: Task[] = [
-        new Task("0","Do it Rick","Blah-blah-blah",'2001-11-16T00:00:00',
+        new Task("Do it Rick","Blah-blah-blah","2001-11-16T00:00:00", '0',
             [
                 new Comment(
                     "Rick",
@@ -34,7 +33,7 @@ export class TaskListService {
                 )
             ]
         ),
-        new Task("1","Know what","never say never Morty",'2001-11-16T00:00:00',
+        new Task("Know what","never say never Morty",'2001-11-16T00:00:00', '1',
             [
                 new Comment(
                     "Summer",
@@ -56,33 +55,10 @@ export class TaskListService {
     getTasks(): Task[]{
         return this.tasksDummy;
     }
-
-    //--- HTTP
-    // getTasks(){
-    //     return this.http.get('http://localhost:3000/task' )
-    //         .map( (response: Response) =>{
-    //             const tasks = response.json().obj;
-    //             let transformedTasks: Task[] = [];
-    //             for(let task of tasks){
-    //                 console.log(task, "-----------");
-    //                 transformedTasks.push(new Task(task.id, task.title, task.description, task.deadline, []
-    //                 ))
-    //             }
-    //             this.tasks = transformedTasks;
-    //             return transformedTasks;
-    //         })
-    //         .catch((error: Response) => Observable.throw(error.json()));
-    //
-    // }
-
     addTask(task: Task){
         this.tasksDummy.push(task);
-        const body = JSON.stringify(task);
-        const headers = new Headers({'Content-Type':'application/json'});
-        return this.http.post('http://localhost:3000/task', body, {headers: headers})
-             .map((response: Response) => response.json())
-            .catch((error: Response) => Observable.throw(error.json()));
     }
+
     deleteTask(task: Task){
         this.tasksDummy.splice(this.tasksDummy.indexOf(task), 1);
     }
@@ -91,12 +67,6 @@ export class TaskListService {
         return this.commentsDummy;
     }
 
-    addComment(comment: Comment){
-        this.commentsDummy.push(comment);
-    }
 
-    deleteCommentk(comment: Comment){
-        this.commentsDummy.splice(this.commentsDummy.indexOf(comment), 1)
-    }
 
 }
