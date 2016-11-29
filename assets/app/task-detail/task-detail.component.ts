@@ -12,7 +12,7 @@ import {Subscription} from "rxjs";
 })
 export class TaskDetailComponent implements OnInit, OnDestroy {
 
-    comments: Comment[];
+    comments: Comment[] = [];
     pageTitle: string = "Task Detail";
     task: Task;
     id: string = this.route.snapshot.params['id'];
@@ -22,12 +22,23 @@ export class TaskDetailComponent implements OnInit, OnDestroy {
         private route: ActivatedRoute,
         private taskListService: TaskListService
     ) {
-        taskListService.getTasks()
+
+    }
+
+    ngOnInit() {
+        // this.comments = this.taskListService.getComments();
+        this.taskListService.getComments(this.id)
+            .subscribe(
+                (comments: Comment[]) => {
+                    this.comments = comments;
+                }
+            );
+
+        this.taskListService.getTasks()
             .subscribe(
                 (tasks: Task[]) => {
                     for(let task of tasks){
                         if(task.id === this.id){
-                            console.log(task);
                             this.task = task;
                             return task;
                         }
@@ -35,29 +46,16 @@ export class TaskDetailComponent implements OnInit, OnDestroy {
                     }
                 }
             );
-    }
-
-    ngOnInit() {
-        // this.comments = this.taskListService.getComments();
-        this.taskListService.getComments()
-            .subscribe(
-                (comments: Comment[]) => {
-                    this.comments = comments;
-                }
-            );
 
         this.paramsSubscription = this.route.params.subscribe( params =>{
 
 
-            this.task = this.taskListService.getTask(params['id']);
 
         })
     }
 
     onSubmit(form: NgForm){
-        console.log(form);
         const comment = new Comment(form.value.author, form.value.text, new Date(), this.id );
-        console.log(comment);
         // this.task.comments.push(comment);
         this.taskListService.addComment(comment)
             .subscribe(
@@ -65,8 +63,7 @@ export class TaskDetailComponent implements OnInit, OnDestroy {
                 error => console.log(error)
             );
         form.resetForm();
-        // here ned to get tasks[id].comments and add there
-        // form.value.author, form.value.text, new Date()
+
 
     }
 

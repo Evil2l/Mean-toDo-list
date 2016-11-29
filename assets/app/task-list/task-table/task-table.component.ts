@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import {TaskListService} from "../../task.service";
 import {Task} from "../models/task.model";
 import {Comment} from "../models/comment.model";
@@ -13,6 +13,7 @@ export class TaskTableComponent implements OnInit {
     comments: Comment[];
     listFilter: string;
     checkedColor: string = "rgba(0, 200, 100, 0.3)";
+    changed = new EventEmitter();
 
 
     constructor(
@@ -34,7 +35,17 @@ export class TaskTableComponent implements OnInit {
     }
 
     onCheck(check: any){
+        // this.changed.emit(check);
         return check.checked;
+    }
+
+    log(e, t, tb){
+        if(e.checked){
+            var parent = t.parentNode;
+            parent.insertBefore(t, parent.firstChild);
+
+        }
+
     }
 
     markTask(check: any){

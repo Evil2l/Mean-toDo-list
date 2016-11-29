@@ -47,7 +47,8 @@ export class TaskListService {
     ];
 
     tasks: Task[] = [];
-    comments: Comment[];
+    comments: Comment[] = [];
+
 
     constructor(private http: Http) { }
 
@@ -72,24 +73,22 @@ export class TaskListService {
         return this.http.get('http://localhost:3000/task')
             .map((response: Response) => {
                 const tasks = response.json().obj;
-                let transformedMessages: Task[] = [];
+                let transformedTasks: Task[] = [];
                 for (let task of tasks) {
-                    transformedMessages.push(new Task(
+                    transformedTasks.push(new Task(
                         task.title,
                         task.description,
                         task.deadline,
                         task._id,
-                        [
-                        ]));
+                        task.comments
+                        ));
                 }
-                this.tasks = transformedMessages;
-                return transformedMessages;
+                this.tasks = transformedTasks;
+                return transformedTasks;
             })
             .catch((error: Response) => Observable.throw(error.json()));
     }
-    getTask(id: any): Task{
-        return id;
-    }
+
 
 
     deleteTask(task: Task){
@@ -100,20 +99,22 @@ export class TaskListService {
             .catch((error: Response) => Observable.throw(error.json()));
     }
 
-    getComments() {
+    getComments(taskId) {
         //noinspection TypeScriptUnresolvedFunction
         return this.http.get('http://localhost:3000/comment')
             .map((response: Response) => {
                 const comments = response.json().obj;
                 let transformedComments: Comment[] = [];
                 for (let comment of comments) {
-                    transformedComments.push(new Comment(
-                        comment.author,
-                        comment.text,
-                        comment.date,
-                        comment.taskId));
+                    if(comment.taskId === taskId){
+                        transformedComments.push(new Comment(
+                            comment.author,
+                            comment.text,
+                            comment.date,
+                            comment.taskId));
+                    }
+
                 }
-                console.log(transformedComments);
                 this.comments = transformedComments;
                 return transformedComments;
             })
@@ -137,8 +138,8 @@ export class TaskListService {
             .catch((error: Response) => Observable.throw(error.json()));
     }
 
-    // getComments(): Comment[]{
-    //     return this.commentsDummy;
-    // }
+    onCheck(){
+    }
+
 
 }

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var Comment = require('../models/comment');
+var Task =require('../models/task');
 
 router.get('/',  function(req, res, next){
     Comment.find()
@@ -20,23 +21,37 @@ router.get('/',  function(req, res, next){
 });
 
 router.post('/', function (req, res, next) {
-    var comment = new Comment({
-        text: req.body.text,
-        author: req.body.author,
-        date: req.body.date,
-        taskId: req.body.taskId
-    });
-    comment.save(function(err, result){
+    var id = req.body.taskId;
+    console.log(id);
+    Task.findById(id, function(err, task){
         if(err){
             return res.status(500).json({
                 title: "An error,",
                 error: err
             });
         }
-        res.status(201).json({
-            message: "comment saved",
-            obj: result
+        var comment = new Comment({
+            text: req.body.text,
+            author: req.body.author,
+            date: req.body.date,
+            taskId: req.body.taskId,
+            task: task
+        });
+        comment.save(function(err, result){
+            if(err){
+                return res.status(500).json({
+                    title: "An error,",
+                    error: err
+                });
+            }
+            task.comments.push(result);
+            task.save();
+            res.status(201).json({
+                message: "comment saved",
+                obj: result
+            });
         });
     });
+
 });
 module.exports = router;

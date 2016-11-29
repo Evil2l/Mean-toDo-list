@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class='table-responsive'>
-        <table class='table' *ngIf="tasks && tasks.length">
+        <table class='table' *ngIf="tasks && tasks.length" #tb >
             <thead>
             <tr>
                 <th>
@@ -26,23 +26,31 @@
                 <th></th>
             </tr>
             </thead>
-            <tbody>
-            <tr [style.background-color]="markTask(check)"
-                *ngFor="let task of tasks | taskFilter:listFilter">
-                <td><input type="checkbox" #check (change)="onCheck(check)"></td>
-                <td><a
-                        (click)="onSelect(task)"
+            <tbody >
+                <tr
+                        [style.background-color]="markTask(check)"
+                        *ngFor="let task of tasks | taskFilter:listFilter"
+                        #tr
+                        (change)="log(check, tr, tb)"
+                >
+                    <td><input
+                            type="checkbox"
+                            #check
+                            (change)="onCheck(check)"
+                            ></td>
+                    <td><a
+                            (click)="onSelect(task)"
 
-                        >{{task.title}}</a></td>
-                <td>{{task.description}}</td>
-                <td><span class="badge">{{task.comments?.length ||  0}}</span></td>
-                <td>{{task.deadline | date}}</td>
-                <td><button
-                        class="btn btn-danger"
-                        [disabled]="!check.checked"
-                        (click)="removeTask(task)"
-                >Del</button></td>
-            </tr>
+                            >{{task.title}}</a></td>
+                    <td>{{task.description}}</td>
+                    <td><span class="badge">{{task.comments?.length}}</span></td>
+                    <td>{{task.deadline | date}}</td>
+                    <td><button
+                            class="btn btn-danger"
+                            [disabled]="!check.checked"
+                            (click)="removeTask(task)"
+                    >Del</button></td>
+                </tr>
             </tbody>
         </table>
     </div>
