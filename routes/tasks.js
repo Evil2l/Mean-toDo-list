@@ -41,4 +41,33 @@ router.post('/', function (req, res, next) {
     });
 });
 
+router.delete('/:id', function(req, res, next) {
+    Task.findById(req.params.id, function (err, task) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            });
+        }
+        if (!task) {
+            return res.status(500).json({
+                title: 'No Message Found!',
+                error: {message: 'Message not found'}
+            });
+        }
+        task.remove(function(err, result) {
+            if (err) {
+                return res.status(500).json({
+                    title: 'An error occurred',
+                    error: err
+                });
+            }
+            res.status(200).json({
+                message: 'Deleted message',
+                obj: result
+            });
+        });
+    });
+});
+
 module.exports = router;

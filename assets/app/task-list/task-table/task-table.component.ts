@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {TaskListService} from "../task.service";
+import {TaskListService} from "../../task.service";
 import {Task} from "../models/task.model";
 import {Comment} from "../models/comment.model";
 import {Router} from "@angular/router";
@@ -22,14 +22,14 @@ export class TaskTableComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.tasks = this.taskListService.getTasks();
+        // this.tasks = this.taskListService.getTasks();
 
-        // this.taskListService.getTasks()
-        //     .subscribe(
-        //         (tasks: Task[]) => {
-        //             this.tasks = tasks;
-        //         }
-        //     );
+        this.taskListService.getTasks()
+            .subscribe(
+                (tasks: Task[]) => {
+                    this.tasks = tasks;
+                }
+            );
         // this.comments = this.taskListService.getComments();
     }
 
@@ -44,7 +44,8 @@ export class TaskTableComponent implements OnInit {
     }
 
     removeTask(task: any){
-        return this.taskListService.deleteTask(task);
+        return this.taskListService.deleteTask(task)
+            .subscribe( result => console.log(result));
     }
 
     onSelect(task: Task) {

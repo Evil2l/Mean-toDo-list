@@ -12,7 +12,7 @@ import {TaskTableComponent} from "./task-list/task-table/task-table.component";
 
 import {routing} from "./app.routing";
 import {TaskFilterPipe} from "./task-list/task-filter.pipe";
-import {TaskListService} from "../app/task-list/task.service";
+import {TaskListService} from "./task.service";
 
 @NgModule({
     declarations: [

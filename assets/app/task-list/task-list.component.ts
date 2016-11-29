@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {TaskListService} from "./task.service";
+import {TaskListService} from "../task.service";
 import {Task} from "./models/task.model";
 import {Comment} from "./models/comment.model";
 
@@ -10,7 +10,7 @@ import {Comment} from "./models/comment.model";
 export class TaskListComponent implements OnInit {
 
     private pageTitle: string = "Task App";
-    tasks: Task[];
+    tasks: Task[] = [];
     comments: Comment[];
 
     isHidden = true;
@@ -19,14 +19,14 @@ export class TaskListComponent implements OnInit {
 
 
     ngOnInit() {
-        this.tasks = this.taskListService.getTasks();
-        // this.taskListService.getTasks()
-        //     .subscribe(
-        //         (tasks: Task[]) => {
-        //             this.tasks = tasks;
-        //         }
-        //     );
-        this.comments = this.taskListService.getComments();
+        // this.tasks = this.taskListService.getTasks();
+        this.taskListService.getTasks()
+            .subscribe(
+                (tasks: Task[]) => {
+                    this.tasks = tasks;
+                }
+            );
+        // this.comments = this.taskListService.getComments();
     }
 
     showForm(){

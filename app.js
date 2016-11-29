@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 // var Task = require('./models/task');
 // var Comment = require('./models/comment');
 
-mongoose.connect("mongodb://user:user@ds163417.mlab.com:63417/mean-todo", function(err) {
+mongoose.connect("mongodb://user:user@ds113628.mlab.com:13628/task-list", function(err) {
     if (err) throw err;
 });
 

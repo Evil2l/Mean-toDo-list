@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import {NgForm} from "@angular/forms";
 
-import {TaskListService} from "../task.service";
+import {TaskListService} from "../../task.service";
 import {Task} from "../models/task.model";
 
 @Component({
