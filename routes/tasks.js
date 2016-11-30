@@ -24,7 +24,8 @@ router.post('/', function (req, res, next) {
     var task = new Task({
         deadline: req.body.deadline,
         description: req.body.description,
-        title: req.body.title
+        title: req.body.title,
+        isDone: req.body.isDone
     });
     task.save(function(err, result){
         if(err){
@@ -40,6 +41,38 @@ router.post('/', function (req, res, next) {
 
     });
 });
+
+
+router.patch('/:id', function (req, res, next) {
+    Task.findById(req.params.id, function (err, task) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            });
+        }
+        if (!task) {
+            return res.status(500).json({
+                title: 'No Message Found!',
+                error: {message: 'Message not found'}
+            });
+        }
+        task.isDone = req.body.isDone;
+        task.save(function(err, result) {
+            if (err) {
+                return res.status(500).json({
+                    title: 'An error occurred',
+                    error: err
+                });
+            }
+            res.status(200).json({
+                message: 'Updated message',
+                obj: result
+            });
+        });
+    });
+});
+
 
 router.delete('/:id', function(req, res, next) {
     Task.findById(req.params.id, function (err, task) {

@@ -3,19 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="6a3f5f23-fcdd-43b2-a412-fbe800f72c66" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.module.ts" afterPath="$PROJECT_DIR$/assets/app/app.module.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/task-detail/task-detail.component.html" afterPath="$PROJECT_DIR$/assets/app/task-detail/task-detail.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/task-detail/task-detail.component.ts" afterPath="$PROJECT_DIR$/assets/app/task-detail/task-detail.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/task-list/task-list.component.ts" afterPath="$PROJECT_DIR$/assets/app/task-list/task-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/task-list/task-new/task-add.component.html" afterPath="$PROJECT_DIR$/assets/app/task-list/task-new/task-add.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/task-list/models/task.model.ts" afterPath="$PROJECT_DIR$/assets/app/task-list/models/task.model.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/task-list/task-new/task-add.component.ts" afterPath="$PROJECT_DIR$/assets/app/task-list/task-new/task-add.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/task-list/task-table/task-table.component.html" afterPath="$PROJECT_DIR$/assets/app/task-list/task-table/task-table.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/task-list/task-table/task-table.component.ts" afterPath="$PROJECT_DIR$/assets/app/task-list/task-table/task-table.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/task.service.ts" afterPath="$PROJECT_DIR$/assets/app/task.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/task.js" afterPath="$PROJECT_DIR$/models/task.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/bundle.js" afterPath="$PROJECT_DIR$/public/js/app/bundle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/app.js" afterPath="$PROJECT_DIR$/routes/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/comments.js" afterPath="$PROJECT_DIR$/routes/comments.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/tasks.js" afterPath="$PROJECT_DIR$/routes/tasks.js" />
     </list>
     <ignored path="02 NodeJS.iws" />
@@ -44,8 +41,28 @@
           <file leaf-file-name="task-table.component.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/app/task-list/task-table/task-table.component.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="100">
-                  <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
+                <state relative-caret-position="150">
+                  <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tasks.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/routes/tasks.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="495">
+                  <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="task-add.component.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/app/task-list/task-new/task-add.component.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="375">
+                  <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
@@ -58,9 +75,11 @@
           <file leaf-file-name="task.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/models/task.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="46" />
-                  <folding />
+                <state relative-caret-position="120">
+                  <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+                  <folding>
+                    <marker date="1480492769000" expanded="true" signature="163:461" ph="{...}" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -68,28 +87,18 @@
           <file leaf-file-name="task-detail.component.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/assets/app/task-detail/task-detail.component.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="190">
-                  <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+                <state relative-caret-position="210">
+                  <caret line="22" column="118" selection-start-line="22" selection-start-column="118" selection-end-line="22" selection-end-column="118" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="comment.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/models/comment.js">
+          <file leaf-file-name="task-detail.component.ts" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/assets/app/task-detail/task-detail.component.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="comment.model.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/app/task-list/models/comment.model.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
-                  <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+                <state relative-caret-position="315">
+                  <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -98,51 +107,31 @@
           <file leaf-file-name="task.service.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/assets/app/task.service.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="430">
-                  <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+                <state relative-caret-position="379">
+                  <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
                   <folding>
                     <element signature="e#349#559#0" expanded="false" />
-                    <element signature="e#594#1260#0" expanded="false" />
+                    <element signature="e#594#1272#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="comments.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/routes/comments.js">
+          <file leaf-file-name="task-add.component.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/app/task-list/task-new/task-add.component.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+                <state relative-caret-position="360">
+                  <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="tasks.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/routes/tasks.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="724">
-                  <caret line="70" column="3" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="task-filter.pipe.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/app/task-list/task-filter.pipe.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="task-table.component.ts" pinned="false" current-in-tab="true">
+          <file leaf-file-name="task-table.component.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/assets/app/task-list/task-table/task-table.component.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="157">
-                  <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+                <state relative-caret-position="300">
+                  <caret line="54" column="5" selection-start-line="47" selection-start-column="4" selection-end-line="54" selection-end-column="5" />
                   <folding>
                     <element signature="e#0#64#0" expanded="true" />
                   </folding>
@@ -201,25 +190,25 @@
         <option value="$PROJECT_DIR$/assets/app/task-list/task-add.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/task-list/task-add.component.html" />
         <option value="$PROJECT_DIR$/assets/app/task-list/task.ts" />
-        <option value="$PROJECT_DIR$/assets/app/task-list/models/task.model.ts" />
         <option value="$PROJECT_DIR$/assets/app/task-list/task-dummy/task-data.ts" />
         <option value="$PROJECT_DIR$/routes/app.js" />
-        <option value="$PROJECT_DIR$/assets/app/task-list/task-new/task-add.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/task-list/task-list.component.html" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/routes/tasks.js" />
         <option value="$PROJECT_DIR$/assets/app/task-list/task.service.ts" />
         <option value="$PROJECT_DIR$/assets/app/task-list/task-new/task-add.component.html" />
-        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
-        <option value="$PROJECT_DIR$/models/task.js" />
         <option value="$PROJECT_DIR$/assets/app/task-list/task-list.component.ts" />
         <option value="$PROJECT_DIR$/models/comment.js" />
         <option value="$PROJECT_DIR$/routes/comments.js" />
-        <option value="$PROJECT_DIR$/assets/app/task-detail/task-detail.component.html" />
-        <option value="$PROJECT_DIR$/assets/app/task-detail/task-detail.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/task.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/task-list/task-table/task-table.component.html" />
+        <option value="$PROJECT_DIR$/models/task.js" />
+        <option value="$PROJECT_DIR$/assets/app/task-list/models/task.model.ts" />
+        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/assets/app/task-list/task-table/task-table.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/task.service.ts" />
+        <option value="$PROJECT_DIR$/routes/tasks.js" />
+        <option value="$PROJECT_DIR$/assets/app/task-detail/task-detail.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/task-list/task-new/task-add.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/task-list/task-table/task-table.component.html" />
+        <option value="$PROJECT_DIR$/assets/app/task-detail/task-detail.component.ts" />
       </list>
     </option>
   </component>
@@ -321,7 +310,53 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TaskList" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TaskList" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TaskList" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TaskList" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TaskList" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TaskList" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -413,6 +448,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="task-new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TaskList" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TaskList" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="task-list" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -447,7 +508,7 @@
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Download Trash/05 Angular 2 + NodeJS" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="6.9.1" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
@@ -543,12 +604,12 @@
       <workItem from="1480197174179" duration="24408000" />
       <workItem from="1480260722551" duration="3644000" />
       <workItem from="1480265740541" duration="3704000" />
-      <workItem from="1480321236046" duration="34697000" />
+      <workItem from="1480321236046" duration="47226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83361000" />
+    <option name="totallyTimeSpent" value="95890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -608,25 +669,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/assets/app/task.service.ts</url>
-          <line>103</line>
-          <properties />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/assets/app/task.service.ts</url>
-          <line>105</line>
-          <properties />
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/assets/app/task.service.ts</url>
-          <line>117</line>
-          <properties />
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/assets/app/task.service.ts</url>
-          <line>120</line>
+          <line>121</line>
           <properties />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
@@ -637,12 +680,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/assets/app/task-list/task-table/task-table.component.ts</url>
-          <line>42</line>
+          <line>50</line>
           <properties />
-          <option name="timeStamp" value="44" />
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/assets/app/task-list/task-table/task-table.component.ts</url>
+          <line>48</line>
+          <properties />
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="45" />
+      <option name="time" value="53" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -782,30 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/task-list/task-new/task-add.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/task-list/task-new/task-add.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="10" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -830,46 +855,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/task.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/comments.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/tasks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="70" column="3" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/task-list/models/task.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/task.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
-          <folding>
-            <element signature="e#349#559#0" expanded="false" />
-            <element signature="e#594#1260#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,22 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/task-detail/task-detail.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/task-detail/task-detail.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/task-list/task-filter.pipe.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -913,21 +887,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/task-list/task-table/task-table.component.html">
+    <entry file="file://$PROJECT_DIR$/models/task.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
+        <state relative-caret-position="120">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+          <folding>
+            <marker date="1480492769000" expanded="true" signature="163:461" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/task-list/models/task.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/tasks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/task-list/task-new/task-add.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/task.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
+          <folding>
+            <element signature="e#349#559#0" expanded="false" />
+            <element signature="e#594#1272#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/task-detail/task-detail.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="22" column="118" selection-start-line="22" selection-start-column="118" selection-end-line="22" selection-end-column="118" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/task-list/task-new/task-add.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/task-list/task-table/task-table.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+        <state relative-caret-position="300">
+          <caret line="54" column="5" selection-start-line="47" selection-start-column="4" selection-end-line="54" selection-end-column="5" />
           <folding>
             <element signature="e#0#64#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/task-list/task-table/task-table.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/task-detail/task-detail.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

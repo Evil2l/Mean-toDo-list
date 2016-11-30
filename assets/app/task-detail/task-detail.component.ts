@@ -12,12 +12,17 @@ import {Subscription} from "rxjs";
 })
 export class TaskDetailComponent implements OnInit, OnDestroy {
 
-    comments: Comment[] = [];
+
+    // Component title
     pageTitle: string = "Task Detail";
+
+    // Used variables
+    comments: Comment[] = [];
     task: Task;
     id: string = this.route.snapshot.params['id'];
     paramsSubscription: Subscription;
 
+    // In constructor we define our services
     constructor(
         private route: ActivatedRoute,
         private taskListService: TaskListService
@@ -25,15 +30,17 @@ export class TaskDetailComponent implements OnInit, OnDestroy {
 
     }
 
+    // On creating component we use services to get data
     ngOnInit() {
-        // this.comments = this.taskListService.getComments();
+
+        // Here we get Comments
         this.taskListService.getComments(this.id)
             .subscribe(
                 (comments: Comment[]) => {
                     this.comments = comments;
                 }
             );
-
+        // Here we get Tasks
         this.taskListService.getTasks()
             .subscribe(
                 (tasks: Task[]) => {
@@ -49,11 +56,9 @@ export class TaskDetailComponent implements OnInit, OnDestroy {
 
         this.paramsSubscription = this.route.params.subscribe( params =>{
 
-
-
         })
     }
-
+    // On form submit we send data
     onSubmit(form: NgForm){
         const comment = new Comment(form.value.author, form.value.text, new Date(), this.id );
         // this.task.comments.push(comment);
@@ -67,6 +72,17 @@ export class TaskDetailComponent implements OnInit, OnDestroy {
 
     }
 
+    //On change value of checkbox we use service method to patch data
+    onCheck(task: Task){
+        let renewTask = task;
+        renewTask.isDone = !renewTask.isDone;
+        console.log(renewTask);
+        return this.taskListService.changeTask(renewTask)
+            .subscribe( result => console.log(result));
+
+    }
+
+    // on destroy component we stop listen the params subsccription
     ngOnDestroy(){
         this.paramsSubscription.unsubscribe();
     }

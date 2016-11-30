@@ -23,25 +23,40 @@ export class TaskTableComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        // this.tasks = this.taskListService.getTasks();
 
         this.taskListService.getTasks()
             .subscribe(
                 (tasks: Task[]) => {
-                    this.tasks = tasks;
+                    var changeTasks = [];
+                    for(let task of tasks){
+                        if(task.isDone){
+                            changeTasks.push(task);
+                        }
+                    }
+                    for(let task of tasks){
+                        if(!task.isDone){
+                            changeTasks.push(task);
+                        }
+                    }
+
+
+                    this.tasks = changeTasks;
                 }
             );
-        // this.comments = this.taskListService.getComments();
     }
 
-    onCheck(check: any){
-        // this.changed.emit(check);
-        return check.checked;
+    onCheck(task: Task){
+        let renewTask = task;
+        renewTask.isDone = !renewTask.isDone;
+        console.log(renewTask);
+        return this.taskListService.changeTask(renewTask)
+            .subscribe( result => console.log(result));
+
     }
 
-    log(e, t, tb){
+    finished(e, t){
         if(e.checked){
-            var parent = t.parentNode;
+            let parent = t.parentNode;
             parent.insertBefore(t, parent.firstChild);
 
         }

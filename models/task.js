@@ -6,6 +6,7 @@ var taskSchema = new Schema({
     title: {type: String, required: true},
     description: {type: String, required: true},
     deadline: {type: Date, default: Date.now},
+    isDone: { type: Boolean, default: false},
     comments:[
         {
             type: Schema.Types.ObjectId,

@@ -18,8 +18,7 @@ export class TaskAddComponent{
 
 
     onSubmit(form: NgForm){
-            console.log(form);
-            const task = new Task(form.value.title, form.value.description, form.value.deadline, (this.tasks.length? this.tasks.length : 0).toString(), []);
+            const task = new Task(form.value.title, form.value.description, form.value.deadline, false, (this.tasks.length? this.tasks.length : 0).toString(), []);
             this.taskListService.addTask(task)
                 .subscribe(
                     data => console.log(data),
@@ -28,14 +27,5 @@ export class TaskAddComponent{
             form.resetForm();
         }
 
-    // OLD SUBMIT
-    // onSubmit(form: NgForm){
-    //     console.log(form);
-    //
-    //     this.taskListService.addTask(
-    //         new Task(form.value.title, form.value.description, form.value.deadline, (this.tasks.length? this.tasks.length : 0).toString(), [])
-    //     );
-    //     form.resetForm();
-    // }
 
 }

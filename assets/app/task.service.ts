@@ -21,7 +21,7 @@ export class TaskListService {
         )
     ];
     private tasksDummy: Task[] = [
-        new Task("Do it Rick","Blah-blah-blah","2001-11-16T00:00:00", '0',
+        new Task("Do it Rick","Blah-blah-blah","2001-11-16T00:00:00",false, '0',
             [
                 new Comment(
                     "Rick",
@@ -35,7 +35,7 @@ export class TaskListService {
                 )
             ]
         ),
-        new Task("Know what","never say never Morty",'2001-11-16T00:00:00', '1',
+        new Task("Know what","never say never Morty",'2001-11-16T00:00:00',false, '1',
             [
                 new Comment(
                     "Summer",
@@ -62,7 +62,7 @@ export class TaskListService {
             {headers: headers})
             .map((response: Response) =>{
                 const result = response.json();
-                const task = new Task(result.obj.title, result.obj.description, result.obj.deadline, result.obj._id, []);
+                const task = new Task(result.obj.title, result.obj.description, result.obj.deadline, result.obj.isDone, result.obj._id, []);
                 this.tasks.push(task);
                 return task;
             })
@@ -79,6 +79,7 @@ export class TaskListService {
                         task.title,
                         task.description,
                         task.deadline,
+                        task.isDone,
                         task._id,
                         task.comments
                         ));
@@ -132,13 +133,25 @@ export class TaskListService {
             .map((response: Response) =>{
                 const result = response.json();
                 const comment = new Comment(result.obj.author, result.obj.text, result.obj.date, result.obj.id);
-                this.commentsDummy.push(comment);
+                this.comments.push(comment);
                 return comment;
             })
             .catch((error: Response) => Observable.throw(error.json()));
     }
 
-    onCheck(){
+    changeTask(task:Task){
+        const url ='http://localhost:3000/task/' + task.id;
+        const body = JSON.stringify(task);
+        console.log(body);
+        const headers = new Headers({'Content-Type': 'application/json'});
+        //noinspection TypeScriptUnresolvedFunction
+        return this.http.patch( url, body, {headers: headers})
+            .map((response: Response) => {
+            response.json()
+            })
+            .catch((error: Response) => Observable.throw(error.json()));
+
+
     }
 
 

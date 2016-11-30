@@ -5,6 +5,7 @@ export class Task{
         public title: string,
         public description: string,
         public deadline: string,
+        public isDone: boolean,
         public id?: string,
         public comments?: Comment[]
     ){}
