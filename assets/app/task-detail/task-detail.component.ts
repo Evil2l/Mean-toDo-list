@@ -58,7 +58,7 @@ export class TaskDetailComponent implements OnInit, OnDestroy {
 
         })
     }
-    // On form submit we send data
+    // On form submit we send data to create Task
     onSubmit(form: NgForm){
         const comment = new Comment(form.value.author, form.value.text, new Date(), this.id );
         // this.task.comments.push(comment);

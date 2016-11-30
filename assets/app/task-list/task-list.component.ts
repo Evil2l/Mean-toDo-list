@@ -9,15 +9,16 @@ import {Comment} from "./models/comment.model";
 })
 export class TaskListComponent implements OnInit {
 
+    // define our variables
     private pageTitle: string = "Task App";
     tasks: Task[] = [];
     comments: Comment[];
-
     isHidden = true;
 
+    // In constructor we define our services to use
     constructor(private taskListService: TaskListService) { }
 
-
+    // On creating component we use services to get data
     ngOnInit() {
         // this.tasks = this.taskListService.getTasks();
         this.taskListService.getTasks()
@@ -29,10 +30,9 @@ export class TaskListComponent implements OnInit {
         // this.comments = this.taskListService.getComments();
     }
 
+    // changer to show form or not
     showForm(){
         this.isHidden = !this.isHidden;
     }
-
-
 
 }

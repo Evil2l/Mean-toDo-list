@@ -6,8 +6,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-// var Task = require('./models/task');
-// var Comment = require('./models/comment');
+
 
 mongoose.connect("mongodb://user:user@ds113628.mlab.com:13628/task-list", function(err) {
     if (err) throw err;
@@ -38,9 +37,9 @@ app.use(function (req, res, next) {
     next();
 });
 
+// use middleware to invoke routs
 app.use('/comment', commentsRoutes);
 app.use('/task', tasksRoutes);
-
 app.use('/', appRoutes);
 
 // catch 404 and forward to error handler
